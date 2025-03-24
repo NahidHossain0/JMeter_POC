@@ -24,18 +24,22 @@ jobs:
           wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.2.tgz
           tar -xvzf apache-jmeter-5.6.2.tgz
           mv apache-jmeter-5.6.2 jmeter
-      
 
       - name: Run JMeter test files
         run: |
+          mkdir -p results  # Ensure the results directory exists
+          
+          # Disable plugin scanning and specify a custom plugin directory
+          PLUGIN_DIR="jmeter/lib/ext"
+
           # Run the first JMeter test file
-          jmeter/bin/jmeter -n -t tests/Reg_singin_page.jmx-l results/Reg_singin_page_results.jtl -e -o results/Reg_singin_page.jmx_report
+          jmeter/bin/jmeter -n -t tests/Reg_singin_page.jmx -l results/Reg_singin_page_results.jtl -e -o results/Reg_singin_page.jmx_report -Duser.plugins.directory=$PLUGIN_DIR
           
           # Run the second JMeter test file
-          jmeter/bin/jmeter -n -t tests/login.jmx -l results/login_results.jtl -e -o results/login.jmx_report
+          jmeter/bin/jmeter -n -t tests/login.jmx -l results/login_results.jtl -e -o results/login.jmx_report -Duser.plugins.directory=$PLUGIN_DIR
           
-          # Run the third JMeter test file (you can add more as needed)
-          jmeter/bin/jmeter -n -t tests/home_to_list_of_pages.jmx -l results/home_to_list_of_pages_results.jtl -e -o results/home_to_list_of_pages_report
+          # Run the third JMeter test file
+          jmeter/bin/jmeter -n -t tests/home_to_list_of_pages.jmx -l results/home_to_list_of_pages_results.jtl -e -o results/home_to_list_of_pages_report -Duser.plugins.directory=$PLUGIN_DIR
 
       - name: Upload JMeter results
         uses: actions/upload-artifact@v4
