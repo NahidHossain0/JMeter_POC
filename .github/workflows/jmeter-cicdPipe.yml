@@ -21,9 +21,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y openjdk-11-jre
-          wget https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.6.2.tgz
+          wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.2.tgz
           tar -xvzf apache-jmeter-5.6.2.tgz
           mv apache-jmeter-5.6.2 jmeter
+      
 
       - name: Run JMeter test files
         run: |
