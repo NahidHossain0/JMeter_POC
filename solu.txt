@@ -1,0 +1,47 @@
+🔹 Step 1: Identify Where _sourcePage and _fp Are Coming From
+Check the previous response (e.g., login page, cart page, etc.) where _sourcePage and _fp appear.
+
+Use View Results Tree to inspect the response and find _sourcePage and _fp.
+
+🔹 Step 2: Add a Regular Expression Extractor
+Right-click on the HTTP request that returns _sourcePage and _fp.
+
+Go to → Add Post Processors → Regular Expression Extractor.
+
+Configure it like this:
+
+✅ Extract _sourcePage
+Reference Name: sourcePage
+
+Regular Expression: _sourcePage=([a-zA-Z0-9%_-]+)
+
+Template: $1$
+
+Match No.: 1
+
+Default Value: NOT_FOUND
+
+✅ Extract _fp
+Reference Name: fp
+
+Regular Expression: _fp=([a-zA-Z0-9%_-]+)
+
+Template: $1$
+
+Match No.: 1
+
+Default Value: NOT_FOUND
+
+🔹 Step 3: Use Extracted Values in Your Request
+Now, in the next HTTP request (e.g., updating the cart), replace _sourcePage and _fp with the extracted variables:
+
+ini
+Copy
+Edit
+updateCartQuantities=Update Cart
+_sourcePage=${sourcePage}
+_fp=${fp}
+🔹 Step 4: Debug the Extraction
+Add a Debug Sampler (Right-click on Thread Group → Add → Sampler → Debug Sampler).
+
+Run the test and check if _sourcePage and _fp are being captured correctly in the View Results Tree.
