@@ -1,0 +1,12 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1742806635350,897,Account.action?newAccountForm=,200,,Register 1-1,text,true,,6575,163,1,1,https://petstore.octoperf.com/actions/Account.action?newAccountForm==,884,0,753
+1742806636249,119,jpetstore.css,200,,Register 1-1,text,true,,6268,141,1,1,https://petstore.octoperf.com/css/jpetstore.css,118,0,0
+1742806636368,233,logo-topbar.svg,200,,Register 1-1,text,true,,16590,146,1,1,https://petstore.octoperf.com/images/logo-topbar.svg,118,0,0
+1742806636602,117,cart.gif,200,,Register 1-1,bin,true,,1956,139,1,1,https://petstore.octoperf.com/images/cart.gif,117,0,0
+1742806636719,117,separator.gif,200,,Register 1-1,bin,true,,338,144,1,1,https://petstore.octoperf.com/images/separator.gif,117,0,0
+1742806636837,117,sm_fish.gif,200,,Register 1-1,bin,true,,565,142,1,1,https://petstore.octoperf.com/images/sm_fish.gif,117,0,0
+1742806636954,117,sm_dogs.gif,200,,Register 1-1,bin,true,,600,142,1,1,https://petstore.octoperf.com/images/sm_dogs.gif,117,0,0
+1742806637072,116,sm_reptiles.gif,200,,Register 1-1,bin,true,,692,146,1,1,https://petstore.octoperf.com/images/sm_reptiles.gif,116,0,0
+1742806637189,117,sm_cats.gif,200,,Register 1-1,bin,true,,583,142,1,1,https://petstore.octoperf.com/images/sm_cats.gif,117,0,0
+1742806637306,118,sm_birds.gif,200,,Register 1-1,bin,true,,545,143,1,1,https://petstore.octoperf.com/images/sm_birds.gif,118,0,0
+1742806637424,118,favicon.ico,404,,Register 1-1,text,false,,995,135,1,1,https://petstore.octoperf.com/favicon.ico,118,0,0
